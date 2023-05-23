@@ -1,0 +1,77 @@
+/* .navbar {
+    border-bottom: 1px solid #000000;
+} */
+.footer{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.line {
+    height: 2px;
+    width: 80%; /* Adjust the width as needed */
+    background-color: #000; /* Adjust the color as needed */
+    margin: 0 auto; /* Center the line horizontally */
+    margin-top: -2px;
+}
+.logo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique ;
+
+}
+.margin-right{
+    margin-left: auto;
+}
+
+
+/* nav{
+    background:black;
+    width:80%;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+} */
+
+/* ul.nav-items {
+	margin-left: auto;
+	padding: 0;
+	display: flex;
+	justify-content: right;
+	flex: 2 2;
+}  */
+
+/* ul.nav-icons{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex: 1 1;
+    justify-content: flex-end;
+    margin-right: 10px;
+} */
+/* 
+li{
+    list-style:none;
+
+} */
+
+
+nav a{
+    color:rgb(24, 24, 24);
+    text-decoration:none;
+    padding:10px 5px;
+    
+  
+} 
+
+
+/* .item-count{
+    margin-top: -6px;
+    position: absolute;
+} */
+
+.custom-link {
+    padding:10px 0px;
+    font-size: 24px;
+    display:block;
+    color: rgb(23, 47, 156);
+    list-style:none;  
+  }
