@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import AddProduct from '../Pages/AddProduct'
-import ProductList from '../Pages/ProductList';
-import Header from "./Header";
+import AddProduct from '../../Pages/AddProduct'
+import ProductList from '../../Pages/Products';
 import './Navbar.css'
 
 function Navbar(){
