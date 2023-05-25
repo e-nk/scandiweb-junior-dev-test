@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './Navbar.css';
 import ProductList from "../ProductList/ProductList";
 
 function Navbar() {
   const [selectedProducts, setSelectedProducts] = useState([]);
   const [products, setProducts] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     // Fetch products from the API endpoint
@@ -61,7 +62,10 @@ function Navbar() {
           </ul>
           <ul className="nav nav-pills margin-right">
             <li className="nav-item custom-link">
-              <Link className="btn btn-success" to="/addproduct">ADD</Link>
+            <button className="btn btn-success" onClick={() => {history.push('/addproduct');
+            window.location.reload();
+            }}>ADD</button>
+
             </li>
             <li className="nav-item ms-1 custom-link">
               <button className="btn btn-danger" onClick={handleMassDelete}>MASS DELETE</button>

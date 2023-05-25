@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import AddProductForm from '../AddProductForm/AddProductForm';
 import './Navbar.css';
 
@@ -13,6 +13,7 @@ const Header = () => {
   const [height, setHeight] = useState('');
   const [width, setWidth] = useState('');
   const [length, setLength] = useState('');
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const Header = () => {
       width: productType === 'Furniture' ? width : null,
       length: productType === 'Furniture' ? length : null,
     };
-
+  
     try {
       const response = await fetch('https://enock-scandiweb-api.idealcis.com', {
         method: 'POST',
@@ -36,11 +37,9 @@ const Header = () => {
         },
         body: JSON.stringify(product),
       });
-
+  
       if (response.ok) {
-        // Product successfully added
         console.log('Product added:', product);
-        // Reset form fields
         setProductType('');
         setSku('');
         setName('');
@@ -50,13 +49,23 @@ const Header = () => {
         setHeight('');
         setWidth('');
         setLength('');
+  
+        // Redirect to the home page ("/")
+        history.push('/');
+        window.location.reload();
       } else {
-        // Error occurred while adding the product
         console.error('Error adding product');
       }
     } catch (error) {
       console.error('Error adding product:', error);
     }
+  };
+  
+
+  const handleCancel = () => {
+    history.push('/');
+    // Refresh the page
+    window.location.reload();
   };
 
   return (
@@ -75,9 +84,9 @@ const Header = () => {
               </button>
             </li>
             <li className="nav-item ms-1 custom-link">
-              <Link className="btn btn-warning" to="/">
+              <button className="btn btn-warning" onClick={handleCancel}>
                 Cancel
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -103,7 +112,7 @@ const Header = () => {
         setWidth={setWidth}
         length={length}
         setLength={setLength}
-        handleSubmit={handleSubmit} // Pass the handleSubmit function as prop
+        handleSubmit={handleSubmit}
       />
       <br></br>
       <br></br>
