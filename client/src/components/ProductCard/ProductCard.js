@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductCard = ({ product, isSelected, onCheckboxChange, onDelete }) => {
+const ProductCard = ({ product, isSelected, onCheckboxChange }) => {
   const { sku, name, price, productType, size, weight, height, width, length } = product;
 
   return (
@@ -18,7 +18,6 @@ const ProductCard = ({ product, isSelected, onCheckboxChange, onDelete }) => {
           {weight}<br />
           Dimensions: {height}x{width}x{length}
         </p>
-        <button className="btn btn-danger" onClick={onDelete}>Delete</button>
       </div>
     </div>
   );

@@ -30,17 +30,21 @@ const ProductList = () => {
     });
   };
 
-  const handleDelete = async (productId) => {
+  const handleMassDelete = async () => {
     try {
-      // Delete the product using the API endpoint
-      await fetch(`https://enock-scandiweb-api.idealcis.com/${productId}`, {
-        method: 'DELETE',
-      });
-      console.log('Deleting product with ID:', productId);
+      // Delete the selected products using the API endpoint
+      for (const productId of selectedProducts) {
+        await fetch(`https://enock-scandiweb-api.idealcis.com/${productId}`, {
+          method: 'DELETE',
+        });
+        console.log('Deleting product with ID:', productId);
+      }
       // Refresh the product list after successful deletion
       fetchProducts();
+      // Clear the selectedProducts state
+      setSelectedProducts([]);
     } catch (error) {
-      console.error('Error deleting product:', error);
+      console.error('Error deleting products:', error);
     }
   };
 
@@ -53,11 +57,13 @@ const ProductList = () => {
               product={product}
               isSelected={selectedProducts.includes(product.id)}
               onCheckboxChange={() => handleCheckboxChange(product.id)}
-              onDelete={() => handleDelete(product.id)}
             />
           </div>
         ))}
       </div>
+      <button className="btn btn-danger" onClick={handleMassDelete}>
+        MASS DELETE
+      </button>
     </div>
   );
 };

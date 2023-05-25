@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Products from "../../Pages/Products";
+import ProductList from "../ProductList/ProductList";
 
 function Navbar() {
   return (
@@ -15,20 +15,19 @@ function Navbar() {
           </ul>
           <ul className="nav nav-pills margin-right">
             <li className="nav-item custom-link">
-              <Link className="btn btn-success" to="/addproduct">ADD</Link>
-            </li>
-            <li className="nav-item ms-1 custom-link">
-              <button className="btn btn-danger" id="delete-product-btn">MASS DELETE</button>
+              <Link className="btn btn-success" to="/addproduct">
+                ADD
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
-      
+
       <div className="line"></div>
       <br></br>
-      <Products />
+      <ProductList />
       <br></br>
-      
+
       <div className="footer">
         <div className="line"></div>
         <h4>Scandiweb Test Assignment</h4>
@@ -38,3 +37,6 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
