@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProductCard = ({ product, isSelected, onCheckboxChange }) => {
-  const { sku, name, price, productType, size, weight, height, width, length } = product;
+  const { sku, name, price, size, weight, height, width, length } = product;
 
   return (
     <div className="card">
