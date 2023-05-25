@@ -44,7 +44,7 @@ const AddProductForm = ({
 
   return (
     <div className="container" id="product_form">
-      <form id="product_form">
+      <form >
         <div className="form-group">
           <label htmlFor="sku">SKU</label>
           <input
