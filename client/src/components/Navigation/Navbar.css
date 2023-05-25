@@ -1,6 +1,4 @@
-/* .navbar {
-    border-bottom: 1px solid #000000;
-} */
+
 .footer{
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -8,50 +6,19 @@
 }
 .line {
     height: 2px;
-    width: 80%; /* Adjust the width as needed */
+    width: 95%; /* Adjust the width as needed */
     background-color: #000; /* Adjust the color as needed */
     margin: 0 auto; /* Center the line horizontally */
     margin-top: -2px;
 }
 .logo{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style: oblique ;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
 
 }
 .margin-right{
     margin-left: auto;
 }
-
-
-/* nav{
-    background:black;
-    width:80%;
-    margin:0 auto;
-    display: flex;
-    align-items: center;
-} */
-
-/* ul.nav-items {
-	margin-left: auto;
-	padding: 0;
-	display: flex;
-	justify-content: right;
-	flex: 2 2;
-}  */
-
-/* ul.nav-icons{
-    margin:0;
-    padding:0;
-    display: flex;
-    flex: 1 1;
-    justify-content: flex-end;
-    margin-right: 10px;
-} */
-/* 
-li{
-    list-style:none;
-
-} */
 
 
 nav a{

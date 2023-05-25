@@ -140,7 +140,7 @@ const Header = () => {
 
       <div className="footer">
         <div className="line"></div>
-        <h4>Scandiweb Test Assignment</h4>
+        <p>Scandiweb Test Assignment</p>
       </div>
     </>
   );
