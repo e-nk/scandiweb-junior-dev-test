@@ -6,7 +6,7 @@ const ProductCard = ({ product, isSelected, onCheckboxChange }) => {
   return (
     <div className="card">
       <div className="card-header">
-        <input type="checkbox" checked={isSelected} onChange={onCheckboxChange} />
+        <input type="checkbox" className='delete-checkbox' checked={isSelected} onChange={onCheckboxChange} />
       </div>
       <div className="card-body d-flex flex-column align-items-center">
         <h5 className="card-title">{sku}</h5>

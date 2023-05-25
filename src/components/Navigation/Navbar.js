@@ -68,7 +68,7 @@ function Navbar() {
 
             </li>
             <li className="nav-item ms-1 custom-link">
-              <button className="btn btn-danger" onClick={handleMassDelete}>MASS DELETE</button>
+              <button className="btn btn-danger" id="delete-product-btn" onClick={handleMassDelete}>MASS DELETE</button>
             </li>
           </ul>
         </div>

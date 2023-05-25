@@ -43,7 +43,7 @@ const AddProductForm = ({
   const typeText = getTypeText();
 
   return (
-    <div className="container">
+    <div className="container" id="product_form">
       <form id="product_form">
         <div className="form-group">
           <label htmlFor="sku">SKU</label>
