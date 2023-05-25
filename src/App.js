@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Navbar} />
-        <Route path="/addproduct" component={Header} />
+        <Route path="/add-product" component={Header} />
       </Switch>
     </Router>
   );

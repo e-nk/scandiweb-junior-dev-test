@@ -62,7 +62,7 @@ function Navbar() {
           </ul>
           <ul className="nav nav-pills margin-right">
             <li className="nav-item custom-link">
-            <button className="btn btn-success" onClick={() => {history.push('/addproduct');
+            <button className="btn btn-success" onClick={() => {history.push('/add-product');
             window.location.reload();
             }}>ADD</button>
 
