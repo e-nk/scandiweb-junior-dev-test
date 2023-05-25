@@ -11,17 +11,18 @@ function getAllProducts()
     return $products;
 }
 
-// Function to get a single product by SKU
-function getProductBySku($sku)
+// Function to get a single product by ID
+function getProductById($id)
 {
     global $db;
-    $query = "SELECT * FROM product WHERE sku = :sku";
+    $query = "SELECT * FROM product WHERE id = :id";
     $stmt = $db->prepare($query);
-    $stmt->bindValue(':sku', $sku);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     $stmt->execute();
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
     return $product;
 }
+
 
 // Function to create a new product
 function createProduct($product)
@@ -30,17 +31,26 @@ function createProduct($product)
     $query = "INSERT INTO product (sku, name, price, productType, size, weight, height, width, length) 
               VALUES (:sku, :name, :price, :productType, :size, :weight, :height, :width, :length)";
     $stmt = $db->prepare($query);
-    $stmt->execute($product);
+    $stmt->bindValue(':sku', $product['sku']);
+    $stmt->bindValue(':name', $product['name']);
+    $stmt->bindValue(':price', $product['price']);
+    $stmt->bindValue(':productType', $product['productType']);
+    $stmt->bindValue(':size', $product['size']);
+    $stmt->bindValue(':weight', $product['weight']);
+    $stmt->bindValue(':height', $product['height']);
+    $stmt->bindValue(':width', $product['width']);
+    $stmt->bindValue(':length', $product['length']);
+    $stmt->execute();
     return $db->lastInsertId();
 }
 
-// Function to delete a product by SKU
-function deleteProduct($sku)
+// Function to delete a product by ID
+function deleteProduct($id)
 {
     global $db;
-    $query = "DELETE FROM product WHERE sku = :sku";
+    $query = "DELETE FROM product WHERE id = :id";
     $stmt = $db->prepare($query);
-    $stmt->bindValue(':sku', $sku);
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
     return $stmt->execute();
 }
 ?>

@@ -1,71 +1,39 @@
-import React, { useState } from 'react';
-import './AddProduct.css'
+// AddProductForm.js
 
-const AddProductForm = () => {
-  const [sku, setSku] = useState('');
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-  const [productType, setProductType] = useState('');
-  const [size, setSize] = useState('');
-  const [weight, setWeight] = useState('');
-  const [height, setHeight] = useState('');
-  const [width, setWidth] = useState('');
-  const [length, setLength] = useState('');
+import React from 'react';
+import './AddProduct.css';
 
+const AddProductForm = ({
+  sku,
+  setSku,
+  name,
+  setName,
+  price,
+  setPrice,
+  productType,
+  setProductType,
+  size,
+  setSize,
+  weight,
+  setWeight,
+  height,
+  setHeight,
+  width,
+  setWidth,
+  length,
+  setLength,
+  handleSubmit
+}) => {
   const handleProductTypeChange = (e) => {
     setProductType(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const product = {
-      sku,
-      name,
-      price,
-      productType,
-      size: productType === 'DVD' ? size : null,
-      weight: productType === 'Book' ? weight : null,
-      height: productType === 'Furniture' ? height : null,
-      width: productType === 'Furniture' ? width : null,
-      length: productType === 'Furniture' ? length : null,
-    };
-
-    try {
-      const response = await fetch('http://localhost', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(product),
-      });
-
-      if (response.ok) {
-        // Product successfully added
-        console.log('Product added:', product);
-        // Reset form fields
-        setSku('');
-        setName('');
-        setPrice('');
-        setSize('');
-        setWeight('');
-        setHeight('');
-        setWidth('');
-        setLength('');
-      } else {
-        // Error occurred while adding the product
-        console.error('Error adding product');
-      }
-    } catch (error) {
-      console.error('Error adding product:', error);
-    }
   };
 
   return (
     <div className="container">
       <h2>Add Product</h2>
-      <form id="product_form" onSubmit={handleSubmit}>
+      <form id="product_form">
         <div className="form-group">
-          <label htmlFor="sku">SKU:</label>
+          <label htmlFor="sku">SKU</label>
           <input
             type="text"
             id="sku"
@@ -75,7 +43,7 @@ const AddProductForm = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
@@ -85,7 +53,7 @@ const AddProductForm = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="price">Price:</label>
+          <label htmlFor="price">Price ($)</label>
           <input
             type="number"
             id="price"
@@ -97,23 +65,22 @@ const AddProductForm = () => {
         <div className="form-group">
           <label htmlFor="productType">Type Switcher</label>
           <div className="select-wrapper">
-          <select
-            id="productType"
-            className="form-control"
-            value={productType}
-            onChange={handleProductTypeChange}
-          >
-            <option value="" disabled></option>
-            <option value="DVD">DVD</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Book">Book</option>
-            
-          </select>
+            <select
+              id="productType"
+              className="form-control"
+              value={productType}
+              onChange={handleProductTypeChange}
+            >
+              <option value="" disabled></option>
+              <option value="DVD">DVD</option>
+              <option value="Furniture">Furniture</option>
+              <option value="Book">Book</option>
+            </select>
           </div>
         </div>
         {productType === 'DVD' && (
           <div className="form-group">
-            <label htmlFor="size">Size (MB):</label>
+            <label htmlFor="size">Size (MB)</label>
             <input
               type="text"
               id="size"
@@ -169,7 +136,6 @@ const AddProductForm = () => {
             </div>
           </div>
         )}
-        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   );

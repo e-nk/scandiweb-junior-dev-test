@@ -1,22 +1,21 @@
 <?php
 require_once 'product.php';
 
-// Handle GET request to retrieve all products
+// Handle GET request to retrieve all products or a single product by ID
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $products = getAllProducts();
-    header('Content-Type: application/json');
-    echo json_encode($products);
-}
-
-// Handle GET request to retrieve a single product by SKU
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['sku'])) {
-    $sku = $_GET['sku'];
-    $product = getProductBySku($sku);
-    header('Content-Type: application/json');
-    if ($product) {
-        echo json_encode($product);
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $product = getProductById($id);
+        header('Content-Type: application/json');
+        if ($product) {
+            echo json_encode($product);
+        } else {
+            echo json_encode(['error' => 'Product not found']);
+        }
     } else {
-        echo json_encode(['error' => 'Product not found']);
+        $products = getAllProducts();
+        header('Content-Type: application/json');
+        echo json_encode($products);
     }
 }
 
@@ -28,10 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(['id' => $productId]);
 }
 
-// Handle DELETE request to delete a product by SKU
-if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($_GET['sku'])) {
-    $sku = $_GET['sku'];
-    $success = deleteProduct($sku);
+// Handle DELETE request to delete a product by ID
+if ($_SERVER['REQUEST_METHOD'] === 'DELETE' && isset($_SERVER['REQUEST_URI'])) {
+    $urlParts = explode('/', $_SERVER['REQUEST_URI']);
+    $id = end($urlParts);
+    $success = deleteProduct($id);
     header('Content-Type: application/json');
     if ($success) {
         echo json_encode(['message' => 'Product deleted successfully']);

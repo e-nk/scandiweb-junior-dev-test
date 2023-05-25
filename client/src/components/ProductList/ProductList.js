@@ -12,7 +12,7 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('http://localhost');
+      const response = await fetch('https://enockscandiweb-api.000webhostapp.com');
       const data = await response.json();
       setProducts(data);
     } catch (error) {
