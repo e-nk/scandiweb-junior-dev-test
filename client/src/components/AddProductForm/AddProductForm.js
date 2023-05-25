@@ -1,5 +1,3 @@
-// AddProductForm.js
-
 import React from 'react';
 import './AddProduct.css';
 

@@ -1,5 +1,16 @@
 <?php
 require_once 'product.php';
+// Allow requests from any origin
+header('Access-Control-Allow-Origin: *');
+
+// Allow specified request methods
+header('Access-Control-Allow-Methods: GET, POST, DELETE');
+
+// Allow specified request headers
+header('Access-Control-Allow-Headers: Origin, Content-Type');
+
+// Set the response content type
+header('Content-Type: application/json');
 
 // Handle GET request to retrieve all products or a single product by ID
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {

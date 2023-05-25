@@ -12,7 +12,7 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch('https://enockscandiweb-api.000webhostapp.com');
+      const response = await fetch('https://enock-scandiweb-api.idealcis.com');
       const data = await response.json();
       setProducts(data);
     } catch (error) {
@@ -30,9 +30,18 @@ const ProductList = () => {
     });
   };
 
-  const handleDelete = (productId) => {
-    // Perform the delete operation using the API endpoint or any other logic
-    console.log('Deleting product with ID:', productId);
+  const handleDelete = async (productId) => {
+    try {
+      // Delete the product using the API endpoint
+      await fetch(`https://enock-scandiweb-api.idealcis.com/${productId}`, {
+        method: 'DELETE',
+      });
+      console.log('Deleting product with ID:', productId);
+      // Refresh the product list after successful deletion
+      fetchProducts();
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
   };
 
   return (

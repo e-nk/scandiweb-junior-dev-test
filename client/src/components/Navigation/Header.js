@@ -29,7 +29,7 @@ const Header = () => {
     };
 
     try {
-      const response = await fetch('https://enockscandiweb-api.000webhostapp.com', {
+      const response = await fetch('https://enock-scandiweb-api.idealcis.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
