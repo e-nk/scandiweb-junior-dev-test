@@ -23,8 +23,24 @@ const AddProductForm = ({
   handleSubmit
 }) => {
   const handleProductTypeChange = (e) => {
-    setProductType(e.target.value);
+    const selectedType = e.target.value;
+    setProductType(selectedType);
   };
+
+  const getTypeText = () => {
+    switch (productType) {
+      case 'Furniture':
+        return 'Please, provide dimensions';
+      case 'DVD':
+        return 'Please, provide size';
+      case 'Book':
+        return 'Please, provide weight';
+      default:
+        return '';
+    }
+  };
+
+  const typeText = getTypeText();
 
   return (
     <div className="container">
@@ -135,6 +151,11 @@ const AddProductForm = ({
           </div>
         )}
       </form>
+      {typeText && (
+        <div className="text-center">
+          <h4 className="text-bold">{typeText}</h4> 
+        </div>
+      )}
     </div>
   );
 };

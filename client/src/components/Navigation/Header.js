@@ -13,10 +13,30 @@ const Header = () => {
   const [height, setHeight] = useState('');
   const [width, setWidth] = useState('');
   const [length, setLength] = useState('');
+  const [notification, setNotification] = useState('');
+
   const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!sku || !name || !price || !productType) {
+      setNotification('Please submit the required data.');
+      return;
+    }
+
+    // Validate input field values
+    if (
+      (productType === 'DVD' && (!size || isNaN(size))) ||
+      (productType === 'Book' && (!weight || isNaN(weight))) ||
+      (productType === 'Furniture' &&
+        (!height || isNaN(height) || !width || isNaN(width) || !length || isNaN(length)))
+    ) {
+      setNotification('Please provide the data of the indicated type.');
+      return;
+    }
+
     const product = {
       sku,
       name,
@@ -28,7 +48,7 @@ const Header = () => {
       width: productType === 'Furniture' ? width : null,
       length: productType === 'Furniture' ? length : null,
     };
-  
+
     try {
       const response = await fetch('https://enock-scandiweb-api.idealcis.com', {
         method: 'POST',
@@ -37,7 +57,7 @@ const Header = () => {
         },
         body: JSON.stringify(product),
       });
-  
+
       if (response.ok) {
         console.log('Product added:', product);
         setProductType('');
@@ -49,7 +69,7 @@ const Header = () => {
         setHeight('');
         setWidth('');
         setLength('');
-  
+
         // Redirect to the home page ("/")
         history.push('/');
         window.location.reload();
@@ -60,7 +80,6 @@ const Header = () => {
       console.error('Error adding product:', error);
     }
   };
-  
 
   const handleCancel = () => {
     history.push('/');
@@ -93,6 +112,7 @@ const Header = () => {
       </nav>
       <div className="line"></div>
       <br></br>
+      {notification && <div className="alert alert-danger">{notification}</div>}
       <AddProductForm
         sku={sku}
         setSku={setSku}
