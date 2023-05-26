@@ -2,6 +2,10 @@ import React from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 
 const ProductList = ({ products, fetchProducts, selectedProducts, onCheckboxChange }) => {
+  if (!products) {
+    return <div></div>; 
+  }
+
   return (
     <div className="container">
       <div className="row">
