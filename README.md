@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Scandiweb Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my code test submission for Scandiweb Junior Developer Role.
 
-## Available Scripts
+The frontend of this project is deployed on Netlify.
+Link to Deployed site:
 
-In the project directory, you can run:
+[![CLICK ME](https://img.shields.io/badge/Click%20Me-red?style=for-the-badge)](https://enock-scandiweb-test.netlify.app/)
 
-### `npm start`
+## Technologies Used
+- ![ReactJs](https://img.shields.io/badge/reactjs-%231572B6.svg?style=for-the-badge&logo=react&logoColor=white)
+- ![PHP](https://img.shields.io/badge/PHP-%231572B6.svg?style=for-the-badge&logo=PHP&logoColor=white)
+- ![Bootstrap](https://img.shields.io/badge/bootstrap-%231572B6.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+- ![Netlify](https://img.shields.io/badge/netlify-%231572B6.svg?style=for-the-badge&logo=netlify&logoColor=white) (frontend deployment)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Getting Started
+In order for you to use the content on this repo, ensure you have the following:
+- A computer that runs on either of the following; (Windows 7+, Linux, Mac OS)
+- nodejs 9.0+
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
+To run this project, follow these steps:
+### Alternative One
+- Open a terminal / command line interface on your computer
+- Clone the repo by using the following:
 
-### `npm test`
+        git@github.com:e-nk/scandiweb-junior-dev-test.git
+- This creates a copy on your local machine for you.
+- Change directory to the repo folder:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        cd scandiweb-junior-dev-test
 
-### `npm run build`
+- (Optional) Open it in ``Visual Studio Code``
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        code .
+- (Alternate Option) Open it in any editor of your choice.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Alternative Two
+- On the top right corner of this page there is a button labelled ``Fork``.
+- Click on that button to fork the repo to your own account.
+- Take on the process in ``Alternative One`` above.
+- Remember to replace your username when cloning.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+        git clone https://github.com/your username/ecommerce-app.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Running the application
+Running the application is straight forward. You can use the following steps to run the app.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Install required dependencies from npm
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+      npm install
+- Run the application on the browser
 
-## Learn More
+      npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Author
+This project was made with ❤️ and ☕ by:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Enock Kipkoech](https://github.com/e-nk)
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).

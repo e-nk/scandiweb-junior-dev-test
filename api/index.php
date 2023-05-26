@@ -11,7 +11,6 @@ header('Access-Control-Allow-Headers: Origin, Content-Type');
 
 // Set the response content type
 header('Content-Type: application/json');
-
 // Handle GET request to retrieve all products or a single product by ID
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['id'])) {

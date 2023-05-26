@@ -1,6 +1,8 @@
-# Product API
+# Scandiweb Test Product API
 
-The Product API is a PHP-based RESTful API that allows you to manage products in a database. It provides endpoints for retrieving all products, retrieving a single product by ID, creating a new product, and deleting a product by ID.
+This is a simple PHP-based RESTful API that allows you to manage products in a database. It provides endpoints for retrieving all products, retrieving a single product by ID, creating a new product, and deleting a product by ID.
+
+This API is deployed on `https://enock-scandiweb-api.idealcis.com/`
 
 ## Getting Started
 
@@ -47,14 +49,6 @@ The Product API provides the following endpoints:
 - Description: Fetches all products from the database.
 - Response: Array of product objects in JSON format.
 
-### Retrieve a single product by ID
-
-- URL: `GET /{id}`
-- Description: Fetches a single product by its ID.
-- Parameters:
-  - `{id}` (required): The ID of the product.
-- Response: The product object in JSON format, or an error message if the product is not found.
-
 ### Create a new product
 
 - URL: `POST /`
@@ -77,11 +71,6 @@ Here are some examples of how to use the Product API endpoints:
 ### Retrieve all products
 
 GET http://localhost:8000
-
-
-### Retrieve a single product by ID
-GET http://localhost:8000/1
-
 
 ### Create a new product
 
